@@ -1,6 +1,6 @@
 <?php 
 
-$connection = new mysqli("localhost","SMGjE414dN","fgW0PWZeE3","SMGjE414dN");
+$connection = mysqli_connect("localhost","SMGjE414dN","fgW0PWZeE3","SMGjE414dN");
 
 $query = "SELECT * FROM tblaccount WHERE id=1";
 
