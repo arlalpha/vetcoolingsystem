@@ -2,7 +2,7 @@
 
 $connection = mysqli_connect("localhost","SMGjE414dN","fgW0PWZeE3","SMGjE414dN");
 
-$query = "SELECT * FROM tblaccount WHERE id=1";
+$query = "SELECT * FROM tblaccount WHERE Id=1";
 
 $result = mysqli_query($connection,$query);
 
