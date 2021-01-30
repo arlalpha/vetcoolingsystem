@@ -6,12 +6,9 @@ $query = "SELECT * FROM tblaccount WHERE id=1";
 
 $result = mysqli_query($connection,$query);
 
-while($row = mysqli_fetch_array($result)){
- 
- echo $row["AccountName"];
- 
- 
-}
+$getrow = mysqli_num_rows($result);
+
+echo $getrow;
 
 
 
