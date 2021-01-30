@@ -2,11 +2,16 @@
 
 $connection = new mysqli("localhost","SMGjE414dN","fgW0PWZeE3","SMGjE414dN");
 
-if(mysqli_connect_errno()){
- echo "error"; 
-}
+$query = "SELECT * FROM tblaccount WHERE id=1";
 
-echo "connected";
+$result = mysqli_query($connection,$query);
+
+while($row = mysqli_fetch_array($result)){
+ 
+ echo $row["AccountName"];
+ 
+ 
+}
 
 
 
