@@ -1,0 +1,311 @@
+body{
+    margin:0;
+    padding:0;
+    position:relative; 
+   margin-left: auto;
+   margin-right: auto;
+   resize: none;
+}
+nav{
+    padding: 10px;
+
+    background-color: #04619F;
+
+    height: 35px;
+    
+}
+.imgLogo{
+    position: relative;
+    float: left;
+}
+.lnkC1{
+    font-size: 5mm;
+    font-family: arial;
+    text-decoration: none;
+    color: white;
+    float: right;
+}
+.lnkC2{
+    font-size: 5mm;
+    font-family: arial;
+    text-decoration: none;
+    color: white;
+    float: left;
+}
+
+.txtC1{
+    font-size: 7mm;
+    font-weight: bold;
+    font-family: arial;
+    text-decoration: none;
+    color: #2C3E50;
+    text-align: center;
+  
+}
+.txtC2{
+    font-size: 7mm;
+    font-weight: bold;
+    font-family: arial;
+    text-decoration: none;
+    color: #011627;
+}
+.txtC3{
+    font-size: 5mm;
+    font-weight: bold;
+    font-family: arial;
+    text-decoration: none;
+    color: #2C3E50;
+   
+  
+}
+.selC1{
+    font-size: 5mm;
+    
+    font-weight: bold;
+    font-family: arial;
+    text-decoration: none;
+    color:  white;
+    background-color: #04619F;
+    float: right;
+    cursor: pointer;
+   border-style: none;
+}
+.imgCover{
+
+    width: 100%;
+    height: 600px;
+    border-radius: 1px;
+  
+}
+.pC1{
+    float: right;
+}
+.div_Body{
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.fltLeft{
+    
+        position: absolute;
+        top: 35%;
+        left: 16px;
+        color: #182848;
+        font-family: arial;
+        font-size: 7mm;
+        font-weight: bold;
+       
+      
+    
+}
+.fltLeft_1{
+    
+    position: absolute;
+    top: 45%;
+    left: 16px;
+    color: #182848;
+    font-family: arial;
+    font-size: 7mm;
+    font-weight: bold;
+  
+
+}
+.fltCenter{
+    
+    position: absolute;
+    top: 8%;
+    left: 15%;
+    right: 15%;
+    color: #011627;
+    font-family: arial;
+    font-size: 9mm;
+    
+
+}
+.fltCenter1{
+    
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    right: 15%;
+    color: #011627;
+    font-family: arial;
+    font-size: 4mm;
+    font-weight: bold;
+    
+
+}
+.fltNav{
+    
+    position: absolute;
+    top: 0%;
+    width: 100%;
+    color: #04619F;
+    font-family: arial;
+    font-size: 7mm;
+    font-weight: bold;
+    
+}
+.fltImgRight{
+
+    position: absolute;
+    bottom: auto;
+    top: 50%;
+    left: 100px;
+    color: #182848;
+    font-family: arial;
+    font-size: 7mm;
+    font-weight: bold;
+    width: 300px;
+
+    
+}
+.fltImgRight_1{
+
+    position: absolute;
+    bottom: auto;
+    top: 50%;
+    left: 420px;
+    color: #182848;
+    font-family: arial;
+    font-size: 7mm;
+    font-weight: bold;
+    width: 300px;
+
+    
+}
+.fltImgRight_2{
+
+    position: absolute;
+    bottom: auto;
+    top: 50%;
+    left: 760px;
+    color: #182848;
+    font-family: arial;
+    font-size: 7mm;
+    font-weight: bold;
+    width: 300px;
+
+    
+}
+.imgIcon{
+    position: relative;
+}
+.div_Right{
+
+    position: relative;
+    float: right;
+}
+.div_footer{
+    padding: 40px;
+   
+    background-color: #04619F;
+   
+    font-weight: bold;
+    height: 50px;
+    
+}
+.txtCopyright{
+    color: white;
+    text-align: center;
+    font-family: arial;
+
+}
+.imgIconF{
+    width: 200px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.menuIcon{
+
+    width: 40px;
+    
+    cursor: pointer;
+}
+.icons{
+
+    width: 25px;
+    float: left;
+    cursor: pointer;
+}
+
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+   right: 0;
+    background-color: #111; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-family: arial;
+    font-size: 4mm;
+    color: #818181;
+    display: block;
+    
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  
+  /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+  #main {
+    transition: margin-left .5s;
+    padding: 20px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+  .profileIcon{
+
+    width: 30px;
+   
+    cursor: pointer;
+  }
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    font-family: arial;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+  }
+  
+  /* Add rounded corners to the top left and the top right corner of the image */
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  .lnks{
+    font-family: arial;
+    text-decoration: none;
+    color:dimgray;
+  }
+  .postImg{
+
+    width: 300px;
+  }
