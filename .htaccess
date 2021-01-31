@@ -1,0 +1,12 @@
+RewriteEngine on
+
+
+RewriteRule ^/ index.php
+RewriteRule ^public public/index.php [NC,L]
+
+RewriteRule ^app/?$ - [F,L]
+RewriteRule ^app/model/?$ - [F,L]
+RewriteRule ^app/view/?$ -[F,L]
+RewriteRule ^app/config/?$ -[F,L]
+RewriteRule ^app/lib/?$ -[F,L]
+
