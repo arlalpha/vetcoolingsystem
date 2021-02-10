@@ -55,10 +55,10 @@ class dbContext{
 }
 
 $dbCon = new dbContext();
-$dbCon->setHost("localhost");
-$dbCon->setUsername("root");
-$dbCon->setPassword("p@ssword");
-$dbCon->setDatabase("vcsdb");
+$dbCon->setHost("sql113.epizy.com");
+$dbCon->setUsername("epiz_27790576");
+$dbCon->setPassword("yfSbWrnZDM");
+$dbCon->setDatabase("epiz_27790576_vcsdb");
 
 
 ?>
