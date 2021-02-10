@@ -1,0 +1,59 @@
+<html>
+<link rel="stylesheet" href="<?php echo $config["LIB_PATH"] . 'css' . DS . 'style.css'; ?>">
+<link rel="stylesheet" href="<?php echo $config["LIB_PATH"] . 'css' . DS . 'style1.css'; ?>">
+<script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'replacestate.js'; ?>"></script>
+<style>
+    .popupbox {
+
+        background-color: royalblue;
+        padding: 10px;
+        border-style: ridge;
+        border-radius: 10px;
+        color: white;
+        text-align: center;
+        width: 300px;
+        font-family: arial;
+        font-size: 4mm;
+
+        border-color: transparent;
+
+    }
+
+    .btns {
+
+        font-family: arial;
+        background-color: black;
+        color: white;
+        font-size: 4mm;
+        width: 80px;
+        border-style: none;
+        border-radius: 7px;
+        margin-right: auto;
+        margin-left: auto;
+        outline-style: none;
+    }
+</style>
+<br><br>
+<a href="#" onclick="location.href='?page=settings'" class="txt-A1">&nbsp;<img src="<?php echo $config["IMG_PATH"] . 'backIcon.png'; ?>" style="width:35px; float:left;" alt=""></a>
+<center>
+    <br><br>
+   
+    <div class="popupbox">
+        
+        <h1>Access Code</h1>
+        <p style="font-family:arial; color:white; font-weight:bold;"><?php  echo $msg1;?></p>
+        <br>
+
+        <form action="?page=accesscode" method="post">
+            <input type="password" name="accesscode_name" class="input-A">
+            <input type="submit" name="tbl_access_name" class="input-A" hidden>
+        </form>
+
+    </div>
+
+</center>
+
+
+
+
+</html>

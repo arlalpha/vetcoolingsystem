@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin</title>
+  <script>
+    var myVar = setInterval(myTimer, 1000);
+
+    function myTimer() {
+      var d = new Date();
+      document.getElementById("demo").innerHTML = d.toLocaleDateString();
+      document.getElementById("demo1").innerHTML = d.toLocaleTimeString();
+      document.getElementById("getDate").innerHTML = d.toLocaleDateString();
+    }
+
+
+    myTimer();
+  </script>
+</head>
+
+<body>
+
+  <header>
+    <?php require_once $config["VIEW_PATH"] . 'layout1' . DS . 'layout1.phtml'; ?>
+  </header>
+
+
+  <article>
+
+    <div class="bord-A">
+      <img src="<?php echo $config["IMG_PATH"] . 'adminIcon1.png'; ?>" style="width:70px; float:left;" alt="">
+      <h1 class="txt-A">&nbsp;&nbsp;Admin</h1>
+      <br>
+      <p class="txt-B"><span><img src="<?php echo $config["IMG_PATH"] . 'profileIcon.png'; ?>" style="width:35px; float:left;" alt=""></span> &nbsp;<b><?php echo $getAccountName; ?></b></p>
+      <br>
+      <p class="txt-B"><span><img src="<?php echo $config["IMG_PATH"] . 'datetime.png'; ?>" style="width:35px; float:left;" alt=""></span> &nbsp;<b id="getDate">Refreshing...</b></p>
+   
+      <p class="txt-B"><span><img src="<?php echo $config["IMG_PATH"] . 'tools.png'; ?>" style="width:35px; float:left;" alt=""></span> &nbsp;<b><a href="?page=settings" class="txt-B">Settings</a> </b></p>
+
+      <div>
+
+        <br><br>
+        <br><br>
+
+        <div class="div_border">
+          <h1 class="txt-A4">Control Panel</h1>
+          <table>
+
+            <tr>
+              <th>
+
+                <div class="div_control">
+                  <a href="?page=database" class="txt-A3"><span><img src="<?php echo $config["IMG_PATH"] . 'database.png'; ?>" style="width:25px; float:left;" alt=""></span>&nbsp; Database &nbsp;</a>
+
+                </div>
+              </th>
+              <th>
+
+                <div class="div_control">
+                  <a href="" class="txt-A3"><span><img src="<?php echo $config["IMG_PATH"] . 'fileserver1.png'; ?>" style="width:25px; float:left;" alt=""></span>&nbsp; File Server &nbsp;</a>
+                </div>
+
+              </th>
+
+              <th>
+
+                <div class="div_control">
+                  <a href="" class="txt-A3"><span><img src="<?php echo $config["IMG_PATH"] . 'account.png'; ?>" style="width:25px; float:left;" alt=""></span>&nbsp; Accounts &nbsp;</a>
+                </div>
+
+              </th>
+
+              <th>
+
+                <div class="div_control">
+                  <a href="" class="txt-A3"><span><img src="<?php echo $config["IMG_PATH"] . 'security.png'; ?>" style="width:25px; float:left;" alt=""></span>&nbsp; Security &nbsp;</a>
+                </div>
+
+              </th>
+
+            </tr>
+          </table>
+
+          <br>
+          <h1 class="txt-A4">System Overview</h1>
+
+          <h1 class="txt-A4">Basic</h1>
+          <p class="txtEE">Admin:&nbsp;<span><b><?php echo $getAccountName; ?></b></span> </p>
+
+
+          <p class="txtEE">System Date: <span><b id="demo">Refreshing...</b></span> </p>
+          <p class="txtEE">System Time: <span><b id="demo1">Refreshing...</b></span> </p>
+          <br>
+          <h1 class="txt-A4">Advance</h1>
+          <h1 class="txt-Ch2">Connection Status</h1>
+          <p class="txtEE">Database Connection: <span><b><?php echo $getconnectionstatus; ?></b></span> </p>
+
+          <br>
+          <h1 class="txt-Ch2">Usage</h1>
+          <?php
+
+          while ($row = mysqli_fetch_array($reuslt_db_status)) {
+            echo ' <p class="txtEE">Database Size in MB: <span><b>' . $row["DB_Size_In_MB"] . 'MB</b></span> </p>';
+          }
+
+          ?>
+
+          <br>
+          <h1 class="txt-Ch2">Control Panel / Access Control</h1>
+          <?php
+
+          $getaccesscode  = "";
+          $msg2  = "";
+         
+          while ($row = mysqli_fetch_array($result0)) {
+            $getaccesscode = $row["AccessCode"];
+          }
+          
+          if ($_SESSION["access_code"] == $getaccesscode) {
+            $msg2 = '<b style="color:green;">Access Granted</b>';
+          }else{
+            $msg2 = '<b style="color:red;">Access Denied</b>';
+          }
+
+
+          ?>
+          <p class="txtEE">Database Permission: <span><b><?php echo $msg2;  ?> </b></span> </p>
+          <p class="txtEE">File Server Permission: <span><b><?php echo $msg2;   ?> </b></span> </p>
+          <p class="txtEE">Accounts Permission: <span><b><?php echo $msg2;   ?> </b></span> </p>
+          <p class="txtEE">Security Permission: <span><b><?php  echo $msg2;  ?> </b></span> </p>
+
+          <br><br>
+          <br><br>
+
+        </div>
+
+        <br><br>
+        <br><br>
+
+  </article>
+</body>
+
+</html>

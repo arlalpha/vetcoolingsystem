@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tasks Viewer</title>
+  <script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'taskviewer.js'; ?>"></script>
+</head>
+
+<body>
+  <header>
+    <?php require_once $config["VIEW_PATH"] . 'layout1' . DS . 'layout1.phtml'; ?>
+  </header>
+
+  <article>
+    <div class="submit_form1">
+
+      <a href="#" onclick="history.go(-1)" class="txt-A1"><img src="<?php echo $config["IMG_PATH"] . 'backIcon.png'; ?>" style="width:35px; float:left;" alt=""></a>
+      <center>
+        <h1 class="txt-F">Task Viewer</h1>
+      </center>
+
+      <hr>
+      <p class="txt-Ch1">Status:
+
+        <?php
+
+        while ($row = mysqli_fetch_array($result1)) {
+
+          if ($row["Pending"] == "True") {
+
+            echo "<b style='color:orangered; font-family:arial;'>Pending</b>";
+          } else  if ($row["Complete"] == "True") {
+
+            echo "<b style='color:green; font-family:arial;'>Completed</b>";
+          }
+          if ($row["Cancel"] == "True") {
+
+            echo "<b style='color:red; font-family:arial;'>Cancelled</b>";
+          }
+        }
+        ?>
+
+      </p>
+      <?php
+
+      while ($row = mysqli_fetch_array($result)) {
+
+        echo "<p class='txt-Ch1'>Customer's Name: <span><b class='txt-Ch2'>&nbsp; " . $row["CustomerName"] . "</b></span></p>
+          <p class='txt-Ch1'>Customer's Address:<span><b class='txt-Ch2'>&nbsp; " . $row["Address"] . "</b></span></p>
+          <p class='txt-Ch1'>Customer's Contact No#:<span><b class='txt-Ch2'>&nbsp; " . $row["ContactNumber"] . "</b></span></p>
+          <p class='txt-Ch1'>Problem Specification:<span><b class='txt-Ch2'>&nbsp; " . $row["ProblemSpecification"] . "</b></span></p>
+          <p class='txt-Ch1'>Scheduled Date:<span><b class='txt-Ch2'>&nbsp; " . $row["Sched_Date"] . "</b></span></p>
+          <p class='txt-Ch1'>Scheduled Time:<span><b class='txt-Ch2'>&nbsp; " . $row["Sched_Time"] . "</b></span></p>";
+      }
+
+
+      ?>
+
+      <br>
+      <?php
+      //
+
+
+      while ($row = mysqli_fetch_array($result2)) {
+
+        if ($row["Pending"] == "True") {
+          echo '<table>
+
+              <tr>
+    
+                <th>
+    
+                  <p class="txt-Ch2"><span><input type="checkbox" id="checkb1" onclick="validateTask()"> </span> Marked As Done</p>
+    
+                </th>
+    
+                <th>
+                <p class="txt-Ch2"><span><input type="checkbox" id="checkb2"  onclick="validateTask()"> </span> Marked As Cancelled</p>
+                </th>
+    
+              </tr>
+              
+    
+            </table>
+            
+            <br>
+            <form action="" method="post">
+            <input type="text" id="input3" name="input3" value="" class="button-Ch3" hidden>
+            <input type="submit" value="Commit Changes" name="commit" id="commit" class="button-Ch3" hidden>
+            </form>
+            ';
+        }
+      }
+      ?>
+
+
+
+
+    </div>
+
+
+  </article>
+
+</body>
+
+</html>

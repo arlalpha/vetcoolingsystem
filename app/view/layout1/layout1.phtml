@@ -1,0 +1,79 @@
+<html>
+
+<link rel="stylesheet" href="<?php echo $config["LIB_PATH"] . 'css' . DS . 'style.css'; ?>">
+<link rel="stylesheet" href="<?php echo $config["LIB_PATH"] . 'css' . DS . 'style1.css'; ?>">
+<script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'replacestate.js'; ?>"></script>
+<script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'login.js'; ?>"></script>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+
+
+  function openNav2() {
+    document.getElementById("mySidenav2").style.width = "250px";
+  }
+
+  function closeNav2() {
+    document.getElementById("mySidenav2").style.width = "0";
+  }
+</script>
+
+<div class="body-A1">
+
+  <div class="nav-A">
+
+    <center>
+      <a href="#" class="lnk-A"><span> <img src="<?php echo $config["IMG_PATH"] . 'menuIcon.png'; ?>" class="menuIcon1" alt="menu" onclick="openNav()"></span> Vet Cooling System <span> <img src="<?php echo $config["IMG_PATH"] . 'notification.png'; ?>" style="width:30px; float:right;" alt="menu" onclick="openNav2()"></span></a>
+    </center>
+
+
+
+
+    <div id="mySidenav" class="sidenav1">
+
+      <a href="javascript:void(0)" class="closebtn1" onclick="closeNav()">&times;</a>
+
+      <a href="#"><span> <img src="" alt=""> &nbsp;</span> Menu</a>
+      <hr>
+
+      <a href="?page=admin"><span> &nbsp;</span> Admin <img src="<?php echo $config["IMG_PATH"] . 'adminIcon2.png'; ?>" class="icons" alt=""></a>
+      <a href="?page=admin"><span> &nbsp;</span> Employee <img src="<?php echo $config["IMG_PATH"] . 'employee.png'; ?>" class="icons" alt=""></a>
+      <a href="?page=todo"><span> &nbsp;</span> To Do <img src="<?php echo $config["IMG_PATH"] . 'todo.png'; ?>" class="icons" alt=""></a>
+      <a href="?page=admin"><span> &nbsp;</span> Inventory <img src="<?php echo $config["IMG_PATH"] . 'inventoryIC.png'; ?>" class="icons" alt=""></a>
+      <a href="?page=taskrecord"><span> &nbsp;</span> Task Record<img src="<?php echo $config["IMG_PATH"] . 'tasklist.png'; ?>" class="icons" alt=""></a>
+      <a href="?page=admin"><span> &nbsp;</span> Notification <img src="<?php echo $config["IMG_PATH"] . 'notification1.png'; ?>" class="icons" alt=""></a>
+      <a href="?page=logout"><span> &nbsp;</span> Log Out <img src="<?php echo $config["IMG_PATH"] . 'logout.png'; ?>" class="icons" alt=""></a>
+
+
+    </div>
+
+    <div id="mySidenav2" class="sidenav2">
+
+      <a href="javascript:void(0)" class="closebtn2" onclick="closeNav2()">&times;</a>
+
+      <a href="#"><span> <img src="" alt=""> &nbsp;</span> Notification</a>
+
+      <hr>
+
+
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+</html>

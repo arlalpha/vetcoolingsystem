@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer</title>
+  <script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'refresh.js'; ?>"></script>
+
+</head>
+
+<body>
+  <header>
+    <?php require_once $config["VIEW_PATH"] . 'layout1' . DS . 'layout1.phtml'; ?>
+  </header>
+  <article>
+
+    <div class="div_customer" id="div_ld">
+
+      <center>
+        <h1 class="txt-F">To Do</h1>
+      </center>
+
+      <hr>
+
+      <br>
+      <h1 class="txt-F3">Pending Tasks: <?php
+
+                                        while ($row = mysqli_fetch_array($result2)) {
+                                          if ($row["Pending"] == "True") {
+                                            $countTask += 1;
+                                          }
+                                        }
+                                        echo   $countTask;
+
+
+
+                                        ?><span> <a href="#" class="txt-A1" style="float:right;" onclick="refresh()"><span><img src="<?php echo $config["IMG_PATH"] . 'refresh.gif'; ?>" style="width:25px; float:left;" alt="" hidden id="refreshGIF"></span>Refresh</a></span></h1>
+
+
+
+      <div class="div_form2">
+
+
+
+        <?php
+
+        //fetch customer data
+        while ($row = mysqli_fetch_array($result1)) {
+
+          if ($row["Pending"] == "True") {
+            echo '
+            
+              <div class="msg-C">
+  
+              <a href="#" class="lnk-A1"> ' . $row["CustomerName"] . '</a>
+              <p class="lnk-A1">Due:' . $row["Sched_Date"] . ' | ' . $row["Sched_Time"] . '</p>
+  
+              <center>
+  
+              
+              <form action="?page=todo" method="post">
+  
+              <input type="text" name="input2" value="' . $row["Id"] . '" hidden>
+              <input type="submit" name="btn_view_task" class="button-B" value="View Task">
+  
+              </form>
+              
+              
+              
+              
+              
+              </center>
+  
+               </div>
+              
+                <br>
+              
+              
+              
+              ';
+          }
+
+          //no pending
+
+        }
+
+
+
+
+
+
+        ?>
+
+
+      </div>
+
+
+
+
+      <br>
+      <br>
+      <hr>
+      <div>
+
+      </div>
+
+    </div>
+
+  </article>
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Log In</title>
+    <script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'login.js'; ?>"></script>
+</head>
+<style>
+    body {
+
+
+        background: #1488CC;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2B32B2, #1488CC);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .login-form {
+
+        background-color: white;
+        border-radius: 8px;
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .input-AZ {
+        font-family: arial;
+        font-size: 4.7mm;
+        border-style: none;
+        width: 250px;
+        border-radius: 8px;
+        outline-style: none;
+    }
+
+    .button-AZ {
+        background-color: #045de9;
+        color: whitesmoke;
+        font-size: 5mm;
+        font-family: arial;
+        resize: vertical;
+        width: 250px;
+        outline: none;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 8px;
+        border-color: #2A2A72;
+        border-style: none;
+        cursor: pointer;
+        
+    }
+</style>
+
+<body onload="getLoginOption()">
+    <header>
+        <?php require_once $config["VIEW_PATH"] . 'layout2' . DS . 'layout2.phtml'; ?>
+    </header>
+
+    <article>
+
+
+        <br>
+        <center>
+
+            <div class="login-form">
+                <br><br>
+                <h1 class="txt-EC">Login to your account</h1>
+
+                <p style="color:red; font-family:arial; font-weight:bold; font-size:4mm;"><?php echo $validateAccount; ?></p>
+
+                <select id="txt_login_option" class="button-AZ" onclick="getLoginOption()" value="<?php echo $_SESSION["loginOption"]; ?>">
+
+                    <?php
+
+                    if ($_SESSION["loginOption"] == "Employee") {
+
+                        echo '<option value="Eployee">Employee</option>
+                        <option value="Admin">Admin</option>';
+                    } else if ($_SESSION["loginOption"] == "Admin") {
+
+                        echo '<option value="Admin">Admin</option>
+                        <option value="Employee">Employee</option>';
+                    } else {
+
+                        echo '<option value="Admin">Admin</option>
+                        <option value="Employee">Employee</option>';
+                    }
+
+
+                    ?>
+
+                </select>
+                <br><br>
+
+                <form action="?page=login" method="post">
+                    <input type="text" name="login_option" id="txtlogin_option" value="<?php echo $_SESSION["loginOption"]; ?>" hidden>
+                    <input type="text" placeholder="Username" id="test" name="username_login" class="input-AZ">
+                    <br><br>
+                    <input type="password" placeholder="Password" name="password_login" class="input-AZ">
+                    <br><br>
+                    <input type="submit" value="Log In" name="submit_login" class="button-AZ">
+
+
+
+                </form>
+                <br><br>
+                <a href="" id="lnkfrg" style="color:black; font-family:arial; font-weight:bold;">Forgot Password</a>
+                <br><br>
+
+                <br><br>
+                <br><br>
+                <br><br>
+
+            </div>
+
+        </center>
+    </article>
+
+    <br>
+
+    <footer>
+
+        <div class="">
+
+            <center>
+                <p style="color:white;font-family:arial; font-weight:bold;">© Copyright - Vet Cooling System 2021</p>
+            </center>
+
+
+
+        </div>
+
+    </footer>
+</body>
+
+</html>

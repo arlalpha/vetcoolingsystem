@@ -1,0 +1,55 @@
+<html>
+
+<style>
+    .popupbox {
+
+        background-color: whitesmoke;
+        padding: 10px;
+        border-style: ridge;
+        border-radius: 10px;
+        color: black;
+        text-align: center;
+        width: 300px;
+        font-family: arial;
+        font-size: 4mm;
+
+        border-color: transparent;
+
+    }
+
+    .btns {
+
+        font-family: arial;
+        background-color: #045de9;
+        color: white;
+        font-size: 4mm;
+        width: 80px;
+        border-style: none;
+        border-radius: 7px;
+        margin-right: auto;
+        margin-left: auto;
+        outline-style: none;
+        cursor: pointer;
+    }
+</style>
+<br><br>
+
+<center>
+    <br><br>
+    <div class="popupbox">
+        <h1>Do you want to submit this form?</h1>
+
+        <br>
+
+        <input type="submit" value="Yes" name="btn_submit" class="btns" onclick="cancelnow()">
+        <input type="button" value="No" class="btns" onclick="location.href='?page=home'" >
+        <input type="button" value="Cancel" class="btns"  onclick="cancelnow()">
+
+    </div>
+
+</center>
+
+
+
+
+</html>

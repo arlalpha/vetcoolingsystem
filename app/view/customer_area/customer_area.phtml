@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Customer Area</title>
+    <script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'customer_area.js'; ?>"></script>
+
+    <script>
+        function onloadF() {
+
+            var getFv = "<?php echo $succ; ?>";
+            if (getFv == "true") {
+                popupmsg1();
+            }
+
+        }
+    </script>
+
+</head>
+
+<style>
+    body {
+
+
+        background: #1488CC;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #2B32B2, #1488CC);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+
+    .submit-form {
+
+        background-color: white;
+        border-radius: 8px;
+        width: 400px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .input-AZ {
+        font-family: arial;
+        font-size: 4.7mm;
+        border-style: none;
+        width: 250px;
+        border-radius: 8px;
+
+        outline-style: none;
+    }
+
+    .button-AZ {
+        background-color: #045de9;
+        color: whitesmoke;
+        font-size: 5mm;
+        font-family: arial;
+        resize: vertical;
+        width: 250px;
+        outline: none;
+        margin-right: auto;
+        margin-left: auto;
+        border-radius: 10px;
+        border-color: #2A2A72;
+        border-style: none;
+        cursor: pointer;
+    }
+</style>
+
+
+<body onload="onloadF()">
+
+    <header>
+        <?php require_once $config["VIEW_PATH"] . 'layout2' . DS . 'layout2.phtml'; ?>
+    </header>
+
+    <article>
+
+
+        <center>
+
+
+
+            <div class="submit-form" id="submit-forms">
+                <br>
+                <h1 class="txt-EC">Customer Area </h1>
+                <a href="?page=customersignup" style="color:#2B32B2;float:right; font-size:4mm; font-family:arial; font-weight:bold; text-decoration:none;">&nbsp;&nbsp;&nbsp;Sign Up&nbsp;&nbsp;</a>
+                <a href="" style="color:#2B32B2;float:right;  font-size:4mm; font-family:arial; font-weight:bold; text-decoration:none;">Log In</a>
+                <br>
+                <form action="" method="post">
+                    <hr>
+
+                    <div id="form-submit">
+                        <h1 class="txt-EC">Basic Information</h1>
+
+                        <br>
+                        <input type="text" placeholder="Customer's Name" name="customername_submit" class="input-AZ" required onkeypress="return event.keyCode != 13;">
+                        <br><br>
+
+                        <textarea id="" cols="30" rows="7" class="input-AZ" name="address_submit" placeholder="Address" required onkeypress="return event.keyCode != 13;"></textarea>
+
+                        <input type="number" placeholder="Contact Number" name="contactno_submit" min="0" class="input-AZ" required onkeypress="return event.keyCode != 13;">
+                        <br><br><br>
+
+                        <textarea id="" cols="30" rows="7" class="input-AZ" name="problemspec_submit" placeholder="Problem Specification" required onkeypress="return event.keyCode != 13;"></textarea>
+
+                        <hr>
+                        <h1 class="txt-A2">Time & Schedule</h1>
+                        <br><br>
+                        <input type="date" placeholder="Date " min="<?php echo $getyear . "-01-01"; ?>" max="<?php echo $getyear . "-12-12"; ?>" name="scheddate_submit" class="input-AZ" required onkeypress="return event.keyCode != 13;">
+                        <p class="txt-A2">Date</p>
+
+                        <input type="time" placeholder="time " name="schedtime_submit" class="input-AZ" required onkeypress="return event.keyCode != 13;">
+                        <p class="txt-A2">Time </p>
+                        <br><br>
+                        <input type="button" value="Submit" class="button-AZ" onclick="submitnow()">
+                    </div>
+
+                    <center>
+
+                        <div id="popup-form" hidden>
+                            <?php require_once $config["VIEW_PATH"] . 'popupbox' . DS . 'popupbox.phtml'; ?>
+                        </div>
+                        <div class="popupbox" hidden id="popupmsg1">
+                            <h1>Submit Successfully, We will contact you shortly. Thank you!</h1>
+
+                            <br>
+                            <input type="button" value="Ok" class="btns" onclick="location.href='?page=home'">
+
+                        </div>
+
+                    </center>
+
+                    <br><br>
+                    <br><br>
+                </form>
+
+
+
+
+            </div>
+        </center>
+
+
+
+
+
+
+
+
+    </article>
+    <footer>
+        <br>
+        <div class="div_footer">
+
+            <p class="txtCopyright">© Copyright - Vet Cooling System 2021</p>
+
+        </div>
+    </footer>
+</body>
+
+</html>

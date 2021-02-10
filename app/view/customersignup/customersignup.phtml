@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>Sign Up</title>
+    <style>
+        .input-AX {
+            background: #1488CC;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2B32B2, #1488CC);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2B32B2, #1488CC);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            color: white;
+            font-size: 5mm;
+            font-family: arial;
+            resize: vertical;
+            width: 200px;
+            outline: none;
+            margin-right: auto;
+            margin-left: auto;
+            border-radius: 10px;
+            border-style: none;
+            border-color: #2A2A72;
+        }
+
+        .txt-AX {
+            font-size: 5mm;
+            font-family: arial;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <?php require_once $config["VIEW_PATH"] . 'layout2' . DS . 'layout2.phtml'; ?>
+    </header>
+
+
+    <article>
+
+        <center>
+            <h1 class="txt-EC">Create Customer Account</h1>
+            <br>
+
+            <div id="div_userinfo">
+
+                <p style="color:red; font-family:arial; font-size:4mm; font-weight:bold;"><?php echo $_SESSION["message1"]; ?></p>
+                <form action="?page=customersignup" method="post">
+                    <input class="input-A" type="text" name="txtCustomerName" placeholder="Enter Customer's Name" value="<?php echo $_SESSION["cname"] ?>" required>
+                    <h1 class="txt-A2">Customer's Name</h1>
+                    <input class="input-A" type="text" name="txtUsername" placeholder="Enter Username" value="<?php echo $_SESSION["uname"] ?>" required>
+                    <h1 class="txt-A2">Username</h1>
+                    <input class="input-A" type="Password" name="txtPassword" placeholder="Enter Password" value="<?php echo $_SESSION["pswrd"] ?>" required>
+                    <h1 class="txt-A2">Password</h1>
+                    <input class="input-A" type="Password" name="txtConfirmPassword" placeholder="Confirm Password" value="<?php echo $_SESSION["cpswrd"] ?>" required>
+                    <h1 class="txt-A2">Confirm Password</h1>
+                    <p class="txt-AX">+639 <span> <input class="input-AX" type="text" name="number" value="<?php echo $_SESSION["pnumber"] ?>" placeholder=""></span></p>
+                    <h1 class="txt-A2">Enter Phone Number</h1>
+                    <button type="submit" name="btn_signup" class="button-A1">Next</button>
+
+                </form>
+
+            </div>
+            <br>
+
+            <?php echo $loadHtml; ?>
+
+
+
+
+        </center>
+
+
+
+    </article>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/6.0.2/firebase.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyCONSHAkxurHVTton4BCc31ye1vShMxDSM",
+            authDomain: "vetcoolingsystem.firebaseapp.com",
+            projectId: "vetcoolingsystem",
+            storageBucket: "vetcoolingsystem.appspot.com",
+            messagingSenderId: "92304548468",
+            appId: "1:92304548468:web:9ab18d4174e06a88db2721",
+            measurementId: "G-D374S1JDVN"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'numberauth.js'; ?>"></script>
+
+
+
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <footer>
+
+        <div class="">
+
+            <center>
+                <p class="txtEE">© Copyright - Vet Cooling System 2021</p>
+            </center>
+
+
+
+        </div>
+
+    </footer>
+</body>
+
+</html>

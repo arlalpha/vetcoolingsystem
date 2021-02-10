@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer</title>
+</head>
+
+<body>
+  <header>
+    <?php require_once $config["VIEW_PATH"] . 'layout1' . DS . 'layout1.phtml'; ?>
+  </header>
+  <article>
+
+    <div class="div_customer">
+
+      <center>
+        <h1 class="txt-F">Task Record</h1>
+      </center>
+      <hr>
+      <br>
+
+      <p class="txt-A2">Task Lists</p>
+
+
+      <span>
+        <form action="" method="post">
+          <p class="txt-A2">View By
+            <select name="task_view_name" id="" class="button-A">
+              <option value="Completed Tasks">Completed Tasks</option>
+              <option value="Pending Tasks">Pending Tasks</option>
+              <option value="Cancelled Tasks">Cancelled Tasks</option>
+            </select>
+            <input type="submit" class="button-Ch1" value="View" name="btn_task_view">
+
+        </form>
+      </span>
+
+      <p class="txt-A1"><?php echo $_SESSION["task_view_by"]; ?>
+        :
+        <?php
+
+        $coutComplete = 0;
+        while ($row = mysqli_fetch_array($result2)) {
+
+          if ($_SESSION["task_view_by"] == "Completed Tasks") {
+            if ($row["Complete"] == "True") {
+              $coutComplete += 1;
+            }
+          }
+
+          //
+          if ($_SESSION["task_view_by"] == "Pending Tasks") {
+            if ($row["Pending"] == "True") {
+              $coutComplete += 1;
+            }
+          }
+          //
+          if ($_SESSION["task_view_by"] == "Cancelled Tasks") {
+            if ($row["Cancel"] == "True") {
+              $coutComplete += 1;
+            }
+          }
+        }
+        echo $coutComplete;
+        ?>
+
+      </p>
+
+      </p>
+
+
+
+      <div class="div_form2">
+
+
+        <?php
+
+
+        if ($_SESSION["task_view_by"] == "Completed Tasks") {
+
+          //fetch customer data
+          while ($row = mysqli_fetch_array($result1)) {
+
+            if ($row["Complete"] == "True") {
+              echo '
+  
+                <div class="msg-B">
+
+                    <a href="#" class="lnk-A1"> ' . $row["CustomerName"] . '</a>
+              <p class="lnk-A1">Sheduled Date & Time:' . $row["Sched_Date"] . ' | ' . $row["Sched_Time"] . '</p>
+
+                <center>
+
+    
+                <form action="?page=todo" method="post">
+
+                <input type="text" name="input2" value="' . $row["Id"] . '" hidden>
+              <input type="submit" name="btn_view_task" class="button-B" value="View Task">
+
+                </form>
+    
+    
+    
+    
+    
+                   </center>
+
+                 </div>
+    
+                 <br>
+    
+    
+    
+                  ';
+
+              //else if
+
+
+
+
+
+
+            }
+
+            //no pending
+
+          }
+
+
+          //end of completed tasks
+        }
+        // pending tasks
+        if ($_SESSION["task_view_by"] == "Pending Tasks") {
+
+          //fetch customer data
+          while ($row = mysqli_fetch_array($result1)) {
+
+            if ($row["Pending"] == "True") {
+              echo '
+  
+                <div class="msg-C">
+
+                    <a href="#" class="lnk-A1"> ' . $row["CustomerName"] . '</a>
+              <p class="lnk-A1">Sheduled Date & Time:' . $row["Sched_Date"] . ' | ' . $row["Sched_Time"] . '</p>
+
+                <center>
+
+    
+                <form action="?page=todo" method="post">
+
+                <input type="text" name="input2" value="' . $row["Id"] . '" hidden>
+              <input type="submit" name="btn_view_task" class="button-B" value="View Task">
+
+                </form>
+    
+    
+    
+    
+    
+                   </center>
+
+                 </div>
+    
+                 <br>
+    
+    
+    
+                  ';
+
+              //else if
+
+
+
+
+
+
+            }
+          }
+
+
+          //end of pending tasks
+        }
+
+
+        // cancelled tasks
+        if ($_SESSION["task_view_by"] == "Cancelled Tasks") {
+
+          //fetch customer data
+          while ($row = mysqli_fetch_array($result1)) {
+
+            if ($row["Cancel"] == "True") {
+              echo '
+  
+                <div class="msg-A">
+
+                    <a href="#" class="lnk-A1"> ' . $row["CustomerName"] . '</a>
+              <p class="lnk-A1">Sheduled Date & Time:' . $row["Sched_Date"] . ' | ' . $row["Sched_Time"] . '</p>
+
+                <center>
+
+    
+                <form action="?page=todo" method="post">
+
+                <input type="text" name="input2" value="' . $row["Id"] . '" hidden>
+              <input type="submit" name="btn_view_task" class="button-B" value="View Task">
+
+                </form>
+    
+    
+    
+    
+    
+                   </center>
+
+                 </div>
+    
+                 <br>
+    
+    
+    
+                  ';
+
+              //else if
+
+
+
+
+
+
+            }
+          }
+
+
+          //end of cancelled tasks
+        }
+
+
+
+        ?>
+
+
+
+
+      </div>
+    </div>
+
+    </div>
+
+  </article>
+</body>
+
+</html>

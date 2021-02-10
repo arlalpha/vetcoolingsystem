@@ -1,0 +1,51 @@
+<html>
+
+<link rel="stylesheet" href="<?php echo $config["LIB_PATH"] . 'css' . DS . 'style.css'; ?>">
+<script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'replacestate.js'; ?>"></script>
+<script src="<?php echo $config["LIB_PATH"] . 'js' . DS . 'login.js'; ?>"></script>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+</script>
+
+<div class="body-A">
+
+  <div class="nav-A">
+
+    <a href="?page=home" class="lnk-A"><span><img class="imgLogo" src="<?php echo $config["IMG_PATH"] . 'logoz.png'; ?>" alt=""> &nbsp;</span>Vet Cooling System</a>
+    <img src="<?php echo $config["IMG_PATH"] . 'menuIcon.png'; ?>" class="menuIcon" alt="menu" onclick="openNav()">
+
+
+    <div id="mySidenav" class="sidenav">
+
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+      <a href="#"><span> <img src="" alt=""> &nbsp;</span> Menu</a>
+      <hr>
+
+      <a href="?page=home"><span> &nbsp;</span> Home <img src="<?php echo $config["IMG_PATH"] . 'homeIcon.png'; ?>" class="icons" alt=""></a>
+      <a href="?page=login"><span> &nbsp;</span> Log In <img src="<?php echo $config["IMG_PATH"] . 'profileIcon.png'; ?>" class="icons" alt=""></a>
+      <a href="#"><span> &nbsp;</span> Sign Up <img src="<?php echo $config["IMG_PATH"] . 'accountnameIcon.png'; ?>" class="icons" alt=""></a>
+      <a href="#"><span> &nbsp;</span> About<img src="<?php echo $config["IMG_PATH"] . 'aboutIcon.png'; ?>" class="icons" alt=""></a>
+      <a href="#"><span> <img src="<?php echo $config["IMG_PATH"] . 'contactIcon.png'; ?>" class="icons" alt=""> &nbsp;</span> Contact Us</a>
+
+      <a href="?page=customer_area"><span> <img src="<?php echo $config["IMG_PATH"] . 'customer.png'; ?>" class="icons" alt=""> &nbsp;</span> Customer Area</a>
+
+
+    </div>
+
+  </div>
+
+
+
+
+</div>
+
+
+
+</html>
