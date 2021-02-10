@@ -1,6 +1,6 @@
 <?php 
 
-header("location: ./public/");
+header("location: https://vetcoolingsystem.herokuapp.com/public/");
 
 
 ?>
