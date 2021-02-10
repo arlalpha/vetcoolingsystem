@@ -55,7 +55,7 @@ class dbContext{
 }
 
 $dbCon = new dbContext();
-$dbCon->setHost("sql113.epizy.com");
+$dbCon->setHost("185.27.134.214");
 $dbCon->setUsername("epiz_27790576");
 $dbCon->setPassword("yfSbWrnZDM");
 $dbCon->setDatabase("epiz_27790576_vcsdb");
